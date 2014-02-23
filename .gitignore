@@ -1,3 +1,6 @@
 TweededBadger/local_settings.*
 env
 .idea
+*.pyc
+*.swp
+staticfiles/
