@@ -79,7 +79,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 MEDIA_URL = '/media/'
 
 # Static files (CSS, JavaScript, Images)
@@ -100,12 +100,12 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
 
 # FILEBROWSER_DIRECTORY = os.path.join(BASE_DIR,'uploads/')
-# FILEBROWSER_DIRECTORY = os.path.join(BASE_DIR,'media/')
-FILEBROWSER_DIRECTORY = "F:/Work/Python/TweededBadger/media/"
-print FILEBROWSER_DIRECTORY
+#FILEBROWSER_DIRECTORY = 'media/'
+#FILEBROWSER_DIRECTORY = "/media/"
+#print FILEBROWSER_DIRECTORY
 # FILEBROWSER_MEDIA_ROOT = os.path.join(BASE_DIR,'uploads/')
-FILEBROWSER_MEDIA_ROOT = "/media/"
-FILEBROWSER_MEDIA_URL = "/media/"
+#FILEBROWSER_MEDIA_ROOT = ''
+#FILEBROWSER_MEDIA_URL = ''
 
 FILEBROWSER_EXTENSIONS = {
     'Folder': [''],
