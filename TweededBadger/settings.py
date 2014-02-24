@@ -25,19 +25,25 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = (
+    'grappelli',
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'south',
+    'imagekit',
+    'tinymce',
     'main',
+    'blog'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -73,15 +79,60 @@ USE_L10N = True
 USE_TZ = True
 
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_URL = '/media/'
+
 # Static files (CSS, JavaScript, Images)
 STATICFILES_FINDERS = {
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 }
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
+    # os.path.join(BASE_DIR, "media"),
 #    '/var/www/static/',
 )
-STATIC_ROOT = "staticfiles/"
+
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+# STATIC_ROOT = '/static/'
+
+
+# FILEBROWSER_DIRECTORY = os.path.join(BASE_DIR,'uploads/')
+# FILEBROWSER_DIRECTORY = os.path.join(BASE_DIR,'media/')
+FILEBROWSER_DIRECTORY = "F:/Work/Python/TweededBadger/media/"
+print FILEBROWSER_DIRECTORY
+# FILEBROWSER_MEDIA_ROOT = os.path.join(BASE_DIR,'uploads/')
+FILEBROWSER_MEDIA_ROOT = "/media/"
+FILEBROWSER_MEDIA_URL = "/media/"
+
+FILEBROWSER_EXTENSIONS = {
+    'Folder': [''],
+    'Image': ['.jpg','.jpeg','.gif','.png','.tif','.tiff'],
+    'Document': ['.pdf','.doc','.rtf','.txt','.xls','.csv'],
+    'Video': ['.mov','.wmv','.mpeg','.mpg','.avi','.rm'],
+    'Audio': ['.mp3','.mp4','.wav','.aiff','.midi','.m4p']
+}
+
+FILEBROWSER_SELECT_FORMATS = {
+    'file': ['Folder','Image','Document','Video','Audio'],
+    'image': ['Image'],
+    'document': ['Document'],
+    'media': ['Video','Audio'],
+}
+FILEBROWSER_VERSIONS = {
+    'admin_thumbnail': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop'},
+    'thumbnail': {'verbose_name': 'Thumbnail (1 col)', 'width': 60, 'height': 60, 'opts': 'crop'},
+    'small': {'verbose_name': 'Small (2 col)', 'width': 140, 'height': '', 'opts': ''},
+    'medium': {'verbose_name': 'Medium (4col )', 'width': 300, 'height': '', 'opts': ''},
+    'big': {'verbose_name': 'Big (6 col)', 'width': 460, 'height': '', 'opts': ''},
+    'large': {'verbose_name': 'Large (8 col)', 'width': 680, 'height': '', 'opts': ''},
+}
+FILEBROWSER_VERSION_QUALITY = 90
+FILEBROWSER_ADMIN_THUMBNAIL = 'admin_thumbnail'
+
+TINYMCE_DEFAULT_CONFIG = {
+    'theme':"advanced"
+}
 

@@ -4,3 +4,6 @@ env
 *.pyc
 *.swp
 staticfiles/
+images/
+uploads/
+media/
