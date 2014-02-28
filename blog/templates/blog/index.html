@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block content %}
     <h1> My Blog Archive </h1>
         {% for post in posts %}
@@ -9,6 +9,13 @@
                     {{post.title}}
                 </a>
             </h2>
+        <h3>{{ post.post_type.slug }}</h3>
+            {% if post.thumbnail %}
+                <img src="{% static post.thumbnail %}">
+            {% elif post.external_image %}
+                <img src="{{ post.external_image }}">
+            {% endif %}
+
             <p>{{post.description}}</p>
             <p>
                 Posted on
