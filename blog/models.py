@@ -21,13 +21,13 @@ class Post(models.Model):
     slug = models.SlugField(unique=True,max_length=255)
     thumbnail = FileBrowseField("Image", max_length=200, directory="uploads/", extensions=[".jpg"], blank=True, null=True)
     description = models.CharField(max_length=255,null=True)
-    content = HTMLField(null=True)
+    content = HTMLField(null=True,blank=True)
     published = models.BooleanField(default=True)
     # created = models.DateTimeField(auto_now_add=True)
     created = models.DateTimeField()
-    external_link = models.URLField(null=True)
-    external_data = models.TextField(null=True)
-    external_image = models.CharField(max_length=255,null=True)
+    external_link = models.URLField(null=True,blank=True)
+    external_data = models.TextField(null=True,blank=True)
+    external_image = models.CharField(max_length=255,null=True,blank=True)
     post_type = models.ForeignKey(PostType)
     class Meta:
         ordering = ['-created']
