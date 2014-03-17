@@ -1,3 +1,107 @@
+.posts {
+  padding: 0;
+}
+.posts .tease {
+  width: 49%;
+  margin: 0.5%;
+  display: inline-block;
+  background-color: sandybrown;
+}
+@media (min-width: 480px) {
+  .posts .tease {
+    width: 32.333333333333336%;
+  }
+}
+@media (min-width: 768px) {
+  .posts .tease {
+    width: 24%;
+  }
+}
+@media (min-width: 992px) {
+  .posts .tease {
+    width: 19%;
+  }
+}
+@media (min-width: 1200px) {
+  .posts .tease {
+    width: 15.666666666666668%;
+  }
+}
+.posts .tease h3 {
+  font-size: 16px;
+  padding: 3%;
+  margin: 0;
+}
+.posts .tease img {
+  width: 100%;
+}
+.posts .tease .posted {
+  padding: 3%;
+  width: 100%;
+}
+.posts .tease.twitter {
+  width: 99%;
+  margin: 0.5%;
+}
+@media (min-width: 480px) {
+  .posts .tease.twitter {
+    width: 65.66666666666667%;
+  }
+}
+@media (min-width: 768px) {
+  .posts .tease.twitter {
+    width: 49%;
+  }
+}
+@media (min-width: 992px) {
+  .posts .tease.twitter {
+    width: 39%;
+  }
+}
+@media (min-width: 1200px) {
+  .posts .tease.twitter {
+    width: 32.333333333333336%;
+  }
+}
+.posts .tease.twitter img {
+  width: 33%;
+  display: inline-block;
+  float: left;
+}
+.posts .tease.twitter h3 {
+  width: 66%;
+  display: inline-block;
+}
+.posts .tease.twitter.no-image h3 {
+  width: 100%;
+}
+.posts .tease.reddit h3 {
+  font-size: 75%;
+}
+.posts .tease.blog {
+  width: 99%;
+  margin: 0.5%;
+}
+@media (min-width: 480px) {
+  .posts .tease.blog {
+    width: 65.66666666666667%;
+  }
+}
+@media (min-width: 768px) {
+  .posts .tease.blog {
+    width: 49%;
+  }
+}
+@media (min-width: 992px) {
+  .posts .tease.blog {
+    width: 39%;
+  }
+}
+@media (min-width: 1200px) {
+  .posts .tease.blog {
+    width: 32.333333333333336%;
+  }
+}
 body {
   padding-top: 50px;
 }

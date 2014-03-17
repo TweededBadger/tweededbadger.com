@@ -1,28 +1,49 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block content %}
-    <h1> My Blog Archive </h1>
-        {% for post in posts %}
-        <div class="post">
-            <h2>
-                <a href="{{post.get_absolute_url}}">
-                    {{post.title}}
-                </a>
-            </h2>
-        <h3>{{ post.post_type.slug }}</h3>
+<div class="container posts">
+        {% for post in posts %}<div class="tease {{ post.post_type.slug }} {% if not post.thumbnail and not post.external_image %}no-image{% endif %}">
+
+
+
             {% if post.thumbnail %}
                 <img src="{% static post.thumbnail %}">
             {% elif post.external_image %}
                 <img src="{{ post.external_image }}">
             {% endif %}
+            {% if post.description %}
+                <p>{{post.description}}</p>
+            {% endif %}
 
-            <p>{{post.description}}</p>
-            <p>
+            <h3>
+                <a href="{{post.get_absolute_url}}">
+                    {{post.title}}
+                </a>
+            </h3>
+            <div class="posted">
                 Posted on
                 <time datetime="{{post.created|date:"c"}}">
                 {{post.created|date}}
                 </time>
-            </p>
-        </div>
-        {% endfor %}
+            </div>
+        </div>{% endfor %}
+</div>
 {% endblock %}
+
+
+
+  {% block scripts %}
+      <script src="{% static 'js/packery.pkgd.min.js' %}"></script>
+      <script>
+
+      $(window).bind("load", function() {
+             var $container = $('.container');
+        // initialize
+        $container.packery({
+          itemSelector: '.tease',
+{#          gutter: 10#}
+        });
+        });
+
+      </script>
+  {% endblock %}
