@@ -1,0 +1,31 @@
+{% load staticfiles %}<div class="tease {{ post.post_type.slug }} {% if not post.thumbnail and not post.external_image %}no-image{% endif %}">
+{% if post.external_link %}
+<a href="{{post.external_link}}" target="_blank">
+{% else %}
+<a href="{{post.get_absolute_url}}">
+{% endif %}
+            {% if post.thumbnail %}
+                <div class="previewimg"><img src="{% static post.thumbnail %}"></div>
+            {% elif post.external_image %}
+                <div class="previewimg"><img src="{{ post.external_image }}"></div>
+            {% endif %}
+            {% if post.description %}
+                <p>{{post.description}}</p>
+            {% endif %}
+
+            <h3>
+
+                    {{post.title}}
+
+            </h3>
+            <div class="posted clearfix">
+                Posted on
+                <time datetime="{{post.created|date:"c"}}">
+                {{post.created|date}}
+                </time>
+            </div>
+<div class="flair">
+            <span class="moonicon-{{ post.post_type.slug }}"></span>
+     </div>
+</a>
+</div>

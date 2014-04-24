@@ -4,12 +4,17 @@
 .posts .tease {
   width: 49%;
   margin: 0.5%;
+  border: 1px solid lightgray;
   display: inline-block;
-  background-color: sandybrown;
+  border-radius: 5px;
+  position: relative;
+}
+.posts .tease * {
+  z-index: 2;
 }
 @media (min-width: 480px) {
   .posts .tease {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
 }
 @media (min-width: 768px) {
@@ -24,7 +29,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease {
-    width: 15.666666666666668%;
+    width: 15.66666667%;
   }
 }
 .posts .tease h3 {
@@ -35,17 +40,46 @@
 .posts .tease img {
   width: 100%;
 }
+.posts .tease a:hover {
+  text-decoration: none;
+}
 .posts .tease .posted {
   padding: 3%;
   width: 100%;
+  border-top: 1px solid lightgray;
+}
+.posts .tease .flair {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 600%;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+.posts .tease .flair span {
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+}
+.posts .tease .flair span.moonicon-twitter {
+  bottom: -20px;
+  right: -20px;
 }
 .posts .tease.twitter {
   width: 99%;
   margin: 0.5%;
+  background-color: lightblue;
 }
 @media (min-width: 480px) {
   .posts .tease.twitter {
-    width: 65.66666666666667%;
+    width: 65.66666667%;
   }
 }
 @media (min-width: 768px) {
@@ -60,13 +94,18 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.twitter {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
 }
-.posts .tease.twitter img {
+.posts .tease.twitter .previewimg {
   width: 33%;
+  height: 100%;
   display: inline-block;
   float: left;
+}
+.posts .tease.twitter .previewimg img {
+  width: 89%;
+  margin: 10%;
 }
 .posts .tease.twitter h3 {
   width: 66%;
@@ -75,8 +114,11 @@
 .posts .tease.twitter.no-image h3 {
   width: 100%;
 }
+.posts .tease.reddit {
+  background-color: lightpink;
+}
 .posts .tease.reddit h3 {
-  font-size: 75%;
+  font-size: 90%;
 }
 .posts .tease.blog {
   width: 99%;
@@ -84,7 +126,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease.blog {
-    width: 65.66666666666667%;
+    width: 65.66666667%;
   }
 }
 @media (min-width: 768px) {
@@ -99,9 +141,115 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.blog {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
+}
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?9zx1gm');
+  src: url('../fonts/icomoon.eot?#iefix9zx1gm') format('embedded-opentype'), url('../fonts/icomoon.woff?9zx1gm') format('woff'), url('../fonts/icomoon.ttf?9zx1gm') format('truetype'), url('../fonts/icomoon.svg?9zx1gm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="moonicon-"],
+[class*=" moonicon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.moonicon-uniF760:before {
+  content: "\e601";
+}
+.moonicon-reddit:before {
+  content: "\e602";
+}
+.moonicon-twitter:before {
+  content: "\e600";
+}
+.moonicon-brain:before {
+  content: "\e603";
+}
+.moonicon-blog:before {
+  content: "\e604";
+}
+.intro {
+  margin: 1em;
+  border-radius: 10px;
+}
+.intro img {
+  width: 70%;
+  margin: 0 auto;
+  display: block;
+}
+@media (min-width: 480px) {
+  .intro img {
+    display: inline-block;
+    float: left;
+    width: 49%;
+  }
+}
+.intro .copy {
+  text-align: center;
+}
+@media (min-width: 480px) {
+  .intro .copy {
+    display: inline-block;
+    width: 49%;
+    float: right;
+  }
+}
+@media (min-width: 768px) {
+  .intro .copy:nth-of-type(2) {
+    width: 49%;
+  }
+}
+.intro .copy h1,
+.intro .copy h2,
+.intro .copy a {
+  margin-top: 0;
 }
 body {
   padding-top: 50px;
+}
+a {
+  color: #000000;
+}
+#size_debug {
+  background-color: white;
+  color: #000000;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+#size_debug:after {
+  content: "XS";
+}
+@media (min-width: 480px) {
+  #size_debug:after {
+    content: "SM";
+  }
+}
+@media (min-width: 768px) {
+  #size_debug:after {
+    content: "MD";
+  }
+}
+@media (min-width: 992px) {
+  #size_debug:after {
+    content: "LG";
+  }
+}
+@media (min-width: 1200px) {
+  #size_debug:after {
+    content: "XL";
+  }
 }

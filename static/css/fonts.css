@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?9zx1gm');
+  src: url('../fonts/icomoon.eot?#iefix9zx1gm') format('embedded-opentype'), url('../fonts/icomoon.woff?9zx1gm') format('woff'), url('../fonts/icomoon.ttf?9zx1gm') format('truetype'), url('../fonts/icomoon.svg?9zx1gm#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="moonicon-"],
+[class*=" moonicon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.moonicon-uniF760:before {
+  content: "\e601";
+}
+.moonicon-reddit:before {
+  content: "\e602";
+}
+.moonicon-twitter:before {
+  content: "\e600";
+}
+.moonicon-brain:before {
+  content: "\e603";
+}
+.moonicon-blog:before {
+  content: "\e604";
+}

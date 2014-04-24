@@ -1,5 +1,37 @@
 @import "../less/variables";
+@import "../less/mixins";
 @import "blogtease";
+@import "fonts";
+@import "intro";
 body {
   padding-top: 50px;
+}
+a {
+  color: #000000;
+}
+
+#size_debug {
+  background-color: white;
+  color: #000000;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  &:after
+  {
+    content: "XS";
+    @media (min-width: @screen-xs) {
+      content: "SM";
+    }
+    @media (min-width: @screen-sm) {
+      content: "MD";
+    }
+    @media (min-width: @screen-md) {
+      content: "LG";
+    }
+    @media (min-width: @screen-lg) {
+      content: "XL";
+    }
+  }
 }

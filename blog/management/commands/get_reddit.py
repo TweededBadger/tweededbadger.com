@@ -1,5 +1,6 @@
 from django.contrib.auth import login
 from django.core.management.base import NoArgsCommand,CommandError
+from django.core.exceptions import ObjectDoesNotExist
 from TweededBadger import local_settings
 from blog.models import Post,PostType
 import praw
@@ -16,10 +17,18 @@ class Command(NoArgsCommand):
         self.reddit_u = local_settings.REDDIT_LOGIN
         self.reddit_p = local_settings.REDDIT_PASSWORD
         self.stdout.write('Hello there ' + self.reddit_u)
-        self.pt = PostType.objects.get(slug='reddit')
+        try:
+            self.pt = PostType.objects.get(slug='reddit')
+        except ObjectDoesNotExist:
+            self.create_reddit_postype()
         self.login()
         self.get_saved()
         # self.test()
+
+    def create_reddit_postype(self):
+        self.pt = PostType(name="Reddit",slug="reddit")
+        self.pt.save()
+
 
     def login(self):
         self.r = praw.Reddit(user_agent='HoneybadgerUK Blog')

@@ -1,33 +1,17 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+
+
 {% block content %}
-<div class="container posts">
-        {% for post in posts %}<div class="tease {{ post.post_type.slug }} {% if not post.thumbnail and not post.external_image %}no-image{% endif %}">
 
+<div class="container">
+<div class="intro clearfix">
+    <img src="/static/img/TweededBadgerLogo.jpg">
+    <div class="copy"><h1>I am London based developer Will Jutsum.</h1></div> <div class="copy"><h2>With over 10 years experience, I understand both
+the artistic and business aspects of digital development. Current passions include Python,
+Cricket & Real Ale.</h2> <a href="#">Find out more here</a></div></div></div>
 
-
-            {% if post.thumbnail %}
-                <img src="{% static post.thumbnail %}">
-            {% elif post.external_image %}
-                <img src="{{ post.external_image }}">
-            {% endif %}
-            {% if post.description %}
-                <p>{{post.description}}</p>
-            {% endif %}
-
-            <h3>
-                <a href="{{post.get_absolute_url}}">
-                    {{post.title}}
-                </a>
-            </h3>
-            <div class="posted">
-                Posted on
-                <time datetime="{{post.created|date:"c"}}">
-                {{post.created|date}}
-                </time>
-            </div>
-        </div>{% endfor %}
-</div>
+<div class="container posts">{% for post in posts %}{% include "tease.html" %}{% endfor %}</div>
 {% endblock %}
 
 
@@ -37,7 +21,7 @@
       <script>
 
       $(window).bind("load", function() {
-             var $container = $('.container');
+             var $container = $('.posts');
         // initialize
         $container.packery({
           itemSelector: '.tease',

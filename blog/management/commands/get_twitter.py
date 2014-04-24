@@ -1,4 +1,5 @@
 from django.core.management.base import NoArgsCommand,CommandError
+from django.core.exceptions import ObjectDoesNotExist
 from TweededBadger import local_settings
 from blog.models import Post,PostType
 from pprint import pprint
@@ -32,7 +33,11 @@ class Command(NoArgsCommand):
         # tl = t.statuses.user_timeline(screen_name='tweededbadger',count=5)
         # # tl = t.statuses.friends_timeline(id="tweededbadger")
         # pprint(tl)
-        self.pt = PostType.objects.get(slug='twitter')
+        try:
+            self.pt = PostType.objects.get(slug='twitter')
+        except ObjectDoesNotExist:
+            self.pt = PostType(name="Twitter",slug="twitter")
+            self.pt.save()
         self.login()
         self.get_tweets()
     def login(self):
@@ -41,7 +46,7 @@ class Command(NoArgsCommand):
                        local_settings.TWITTER_CONSUMER_KEY, local_settings.TWITTER_CONSUMER_SECRET)
            )
     def get_tweets(self):
-        tweets = self.twitter_connection.statuses.user_timeline(screen_name='tweededbadger',count=5)
+        tweets = self.twitter_connection.statuses.user_timeline(screen_name='tweededbadger',count=10)
         for tweet in tweets:
             if not self.check_if_saved(tweet):
                 # pprint(tweet)

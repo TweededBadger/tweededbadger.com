@@ -76,12 +76,11 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 MEDIA_URL = '/media/'
-
 # Static files (CSS, JavaScript, Images)
 STATICFILES_FINDERS = {
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -97,6 +96,7 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+print STATIC_ROOT
 # STATIC_ROOT = '/static/'
 
 

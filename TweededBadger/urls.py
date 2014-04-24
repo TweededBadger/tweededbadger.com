@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     (r'^tinymce/', include('tinymce.urls')),
 )
 
+print site.storage.location
+
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns() #this serves static files and media files.
     #in case media is not served correctly
