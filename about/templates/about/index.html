@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+<div class="about">
+<div class="base vertical-center-outer">
+    <div class="vertical-center">
+        <img src="/static/img/BadgerBaset.png">
+    </div>
+</div>
+<div class="sections">
+    <div class="section section1 vertical-center-outer">
+        <div class="vertical-center maincopy">
+            <div>
+                <h1>Greetings!</h1>
+                <p>I am London based technologist Will Jutsum. With over 9 years experience, I understand both the artistic and business aspects of digital development.</p>
+                <p>Scroll down to find out more..</p>
+            </div>
+        </div>
+        <div class="fixed vertical-center-outer">
+             <div class="vertical-center">
+             <img src="/static/img/BadgerHat.png">
+        </div>
+        </div>
+    </div>
+    <div class="section section2 vertical-center-outer">
+        <div class="vertical-center maincopy">
+            <div><p>As a freelance developer, I have a passion for creating digital experiences both on and off the web. Having worked in web agencies for over 9 years, I've been lucky enough to work for some of the largest brands in the world.
+</p></div>
+        </div>
+        <div class="fixed vertical-center-outer">
+             <div class="vertical-center">
+             <img src="/static/img/BadgerOver2.png">
+        </div>
+        </div>
+    </div>
+    <div class="section section3 vertical-center-outer">
+        <div class="vertical-center maincopy">
+           <div><p>
+From building Kinect based games for the Olympic torch relay to turning people upside down at the Edinburgh Fringe festival, and even tracking a giant fried egg across the country! I thrive on finding interesting and unexpected digital solutions to any project brief.
+           </p></div>
+        </div>
+        <div class="fixed vertical-center-outer">
+             <div class="vertical-center">
+             <img src="/static/img/BadgerOver3.png">
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
+
+{% block scripts %}
+
+  <script>
+    var about = (function(){
+        var $currentItem;
+        function init() {
+           setupSections();
+           setupListeners();
+            checkPos();
+        }
+        setupSections = function() {
+            $(".section").each(function(e){
+               $section = $(this);
+               $section.attr('data-debug',999);
+               this.fixedsection = $section.find(".fixed");
+{#                this.fixedsection.hide();#}
+            });
+        }
+        setupListeners = function() {
+            $( window ).scroll(function() {
+                checkPos();
+            });
+        }
+        selectCurrent = function($elem) {
+            if ($currentItem != $elem) {
+            if ($currentItem) {
+                if ($elem != $currentItem){
+                    $currentItem.removeClass('active');
+                } else {
+                    return false;
+                }
+            }
+                $elem.addClass('active');
+                $currentItem = $elem;
+        }
+        }
+        checkPos = function() {
+            var h = $(window).height();
+            var foundactive = false;
+             $(".section").each(function(e){
+                $section = $(this);
+                bounding = this.getBoundingClientRect();
+
+                if (bounding.top < 0) {
+                    var sh = bounding.bottom;
+                } else {
+                    var sh = h - bounding.top;
+                }
+                 if (sh > (h/2)) {
+                     selectCurrent(this.fixedsection);
+                     foundactive = true;
+                 }
+
+
+                $section.attr('data-debug',sh + " bb:" + bounding.bottom+ " bt:" + bounding.top);
+{#                if (!foundactive && )#}
+
+             });
+        }
+        return { init : init };
+    })();
+  about.init();
+  </script>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -43,7 +43,8 @@ INSTALLED_APPS = (
     'imagekit',
     'tinymce',
     'main',
-    'blog'
+    'blog',
+    'about',
 )
 
 MIDDLEWARE_CLASSES = (

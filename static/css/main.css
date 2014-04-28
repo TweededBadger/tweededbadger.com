@@ -1,3 +1,7 @@
+.navbar .logo img {
+  height: 40px;
+  margin-top: 5px;
+}
 .posts {
   padding: 0;
 }
@@ -14,7 +18,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease {
-    width: 32.33333333%;
+    width: 32.333333333333336%;
   }
 }
 @media (min-width: 768px) {
@@ -29,7 +33,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease {
-    width: 15.66666667%;
+    width: 15.666666666666668%;
   }
 }
 .posts .tease h3 {
@@ -79,7 +83,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease.twitter {
-    width: 65.66666667%;
+    width: 65.66666666666667%;
   }
 }
 @media (min-width: 768px) {
@@ -94,7 +98,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.twitter {
-    width: 32.33333333%;
+    width: 32.333333333333336%;
   }
 }
 .posts .tease.twitter .previewimg {
@@ -126,7 +130,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease.blog {
-    width: 65.66666667%;
+    width: 65.66666666666667%;
   }
 }
 @media (min-width: 768px) {
@@ -141,7 +145,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.blog {
-    width: 32.33333333%;
+    width: 32.333333333333336%;
   }
 }
 @font-face {
@@ -215,8 +219,76 @@
 .intro .copy a {
   margin-top: 0;
 }
+.about {
+  height: 100%;
+}
+.about .base {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.about .base .vertical-center {
+  width: 100%;
+}
+.about .base .vertical-center img {
+  width: 50%;
+}
+.about .sections {
+  height: 100%;
+}
+.about .sections .section {
+  height: 100%;
+}
+.about .sections .section .maincopy {
+  width: 49%;
+  margin-left: 50%;
+}
+.about .sections .section .fixed {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-transition: top 0.5s;
+  transition: top 0.5s;
+}
+.about .sections .section .fixed.active {
+  top: 0%;
+  -webkit-transition: top 1s;
+  transition: top 1s;
+}
+.about .sections .section .fixed > div {
+  width: 100%;
+}
+.about .sections .section .fixed img {
+  width: 50%;
+}
+.about .sections .section1 {
+  background-color: rgba(1, 255, 1, 0.1);
+}
+.about .sections .section2 {
+  background-color: rgba(1, 0, 255, 0.1);
+}
+.about .sections .section3 {
+  background-color: rgba(255, 0, 1, 0.1);
+}
+.vertical-center-outer:after {
+  content: '';
+  height: 100%;
+  margin-left: -0.25em;
+  /* To offset spacing. May vary by font */
+  display: inline-block;
+  vertical-align: middle;
+}
+.vertical-center {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 99%;
+}
+html,
 body {
-  padding-top: 50px;
+  height: 100%;
 }
 a {
   color: #000000;
