@@ -265,13 +265,19 @@
   width: 50%;
 }
 .about .sections .section1 {
-  background-color: rgba(1, 255, 1, 0.1);
+  background-color: rgba(1, 255, 1, 0.2);
 }
 .about .sections .section2 {
-  background-color: rgba(1, 0, 255, 0.1);
+  background-color: rgba(1, 0, 255, 0.2);
 }
 .about .sections .section3 {
-  background-color: rgba(255, 0, 1, 0.1);
+  background-color: rgba(255, 0, 1, 0.2);
+}
+.about .sections .section4 {
+  background-color: rgba(255, 255, 1, 0.2);
+}
+.about .sections .section5 {
+  background-color: rgba(255, 0, 255, 0.2);
 }
 .vertical-center-outer:after {
   content: '';
