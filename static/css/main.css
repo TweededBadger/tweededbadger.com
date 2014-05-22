@@ -18,7 +18,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
 }
 @media (min-width: 768px) {
@@ -33,7 +33,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease {
-    width: 15.666666666666668%;
+    width: 15.66666667%;
   }
 }
 .posts .tease h3 {
@@ -83,7 +83,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease.twitter {
-    width: 65.66666666666667%;
+    width: 65.66666667%;
   }
 }
 @media (min-width: 768px) {
@@ -98,7 +98,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.twitter {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
 }
 .posts .tease.twitter .previewimg {
@@ -130,7 +130,7 @@
 }
 @media (min-width: 480px) {
   .posts .tease.blog {
-    width: 65.66666666666667%;
+    width: 65.66666667%;
   }
 }
 @media (min-width: 768px) {
@@ -145,7 +145,7 @@
 }
 @media (min-width: 1200px) {
   .posts .tease.blog {
-    width: 32.333333333333336%;
+    width: 32.33333333%;
   }
 }
 @font-face {
@@ -232,17 +232,26 @@
   width: 100%;
 }
 .about .base .vertical-center img {
-  width: 50%;
+  width: 40%;
+  left: 10%;
+  position: relative;
+  max-width: 600px;
 }
 .about .sections {
   height: 100%;
 }
 .about .sections .section {
-  height: 100%;
+  height: 110%;
 }
 .about .sections .section .maincopy {
-  width: 49%;
+  width: 40%;
   margin-left: 50%;
+}
+.about .sections .section .maincopy h1 {
+  font-size: 3em;
+}
+.about .sections .section .maincopy p {
+  font-size: 2em;
 }
 .about .sections .section .fixed {
   position: fixed;
@@ -262,22 +271,25 @@
   width: 100%;
 }
 .about .sections .section .fixed img {
-  width: 50%;
+  width: 40%;
+  left: 10%;
+  position: relative;
+  max-width: 600px;
 }
 .about .sections .section1 {
-  background-color: rgba(1, 255, 1, 0.2);
+  background-color: #38c3c6;
 }
 .about .sections .section2 {
-  background-color: rgba(1, 0, 255, 0.2);
+  background-color: #fa874a;
 }
 .about .sections .section3 {
-  background-color: rgba(255, 0, 1, 0.2);
+  background-color: #abe255;
 }
 .about .sections .section4 {
-  background-color: rgba(255, 255, 1, 0.2);
+  background-color: #7855c0;
 }
 .about .sections .section5 {
-  background-color: rgba(255, 0, 255, 0.2);
+  background-color: #ffc322;
 }
 .vertical-center-outer:after {
   content: '';
@@ -295,6 +307,10 @@
 html,
 body {
   height: 100%;
+  font-family: 'Arvo', serif;
+}
+body {
+  color: #ffffff;
 }
 a {
   color: #000000;
