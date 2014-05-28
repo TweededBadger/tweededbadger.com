@@ -6,13 +6,43 @@
 @import "intro";
 @import "about";
 
+@lightblue: rgb(56, 195, 198);
+@orange: rgb(250, 135, 74);
+@green: rgb(171, 226, 85);
+@purple: rgb(120, 85, 192);
+@yellow: rgb(255, 195, 34);
+
 html,body {
   height: 100%;
+
+  font-family: 'Oxygen', sans-serif;
+  padding-top: 20px;
+  font-weight: 100;
+  font-size: 16px;
+}
+h1,h2,h3,h4 {
   font-family: 'Arvo', serif;
+//  color: rgb(250, 135, 74);;
+}
+h2:nth-of-type(5n + 0) {
+  color: @lightblue;
+}
+h2:nth-of-type(5n + 1) {
+  color: @orange;
+}
+h2:nth-of-type(5n + 2) {
+  color: @green;
+}
+h2:nth-of-type(5n + 3) {
+  color: @purple;
+}
+h2:nth-of-type(5n + 4) {
+  color: @yellow;
 }
 body {
 //  padding-top: 50px;
-  color: #ffffff;
+  color: #44434d;
+//  background-color: rgb(250, 135, 74);
 }
 a {
   color: #000000;

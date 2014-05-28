@@ -252,6 +252,7 @@
 }
 .about .sections .section .maincopy p {
   font-size: 2em;
+  font-family: 'Arvo', serif;
 }
 .about .sections .section .fixed {
   position: fixed;
@@ -307,10 +308,34 @@
 html,
 body {
   height: 100%;
+  font-family: 'Oxygen', sans-serif;
+  padding-top: 20px;
+  font-weight: 100;
+  font-size: 16px;
+}
+h1,
+h2,
+h3,
+h4 {
   font-family: 'Arvo', serif;
 }
+h2:nth-of-type(5n + 0) {
+  color: #38c3c6;
+}
+h2:nth-of-type(5n + 1) {
+  color: #fa874a;
+}
+h2:nth-of-type(5n + 2) {
+  color: #abe255;
+}
+h2:nth-of-type(5n + 3) {
+  color: #7855c0;
+}
+h2:nth-of-type(5n + 4) {
+  color: #ffc322;
+}
 body {
-  color: #ffffff;
+  color: #44434d;
 }
 a {
   color: #000000;
