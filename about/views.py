@@ -5,3 +5,6 @@ def index(request):
 
 def tools(request):
     return render(request,'about/tools.html')
+
+def cv(request):
+    return render(request,'about/cv.html')

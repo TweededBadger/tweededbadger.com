@@ -1,0 +1,56 @@
+
+@import "fonts";
+body {
+  width: 780px;
+  font-size: 14px;
+  line-height: 17px;
+  border-right: solid 1px #ececec;
+}
+.cv {
+  h1 {
+    font-size: 40px;
+    color: @orange;
+    margin-bottom: 15px;
+  }
+
+  .logo {
+    padding-top: 4px;
+    width:138px;
+    padding-right: 0;
+    img {
+      width: 100%;
+      max-width: 115px;
+    }
+  }
+  .header {
+    > div {
+      padding-right: 0;
+    }
+    margin-top: 20px;
+    h1 {
+      margin-top: 0;
+    }
+    .name {
+      width: 260px;
+      p {
+        margin: 0;
+      }
+    }
+    .cvintro {
+//      font-weight: bold;
+      width: 380px;
+    }
+
+  }
+
+  .skills {
+    h2  {
+      color:@purple;
+    }
+    p {
+      strong {
+        color:@purple;
+      }
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block extrahead %}
+    <link href="{% static 'css/cv.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <div class="cv">
+
+        <div class="header">
+            <div class="col-xs-4 name">
+                <h1>Will Jutsum</h1>
+
+                <p>Website: <a href="http://tweededbadger.com">http://tweededbadger.com</a></p>
+
+                <p>E-Mail: <a href="mailto:wjutsum@googlemail.com">wjutsum@googlemail.com</a></p>
+
+                <p>LinkedIn: <a href="mailto:wjutsum@googlemail.com">wjutsum@googlemail.com</a></p>
+            </div>
+
+            <div class="col-xs-2 logo"><img src="/static/img/Badger_crop.jpg"></div>
+            <div class="col-xs-6 cvintro">
+                {#<h2>Overview</h2>#}
+
+                <p>A freelance developer with 9 years experience working in digital marketing agencies, I have a breadth
+                    of knowledge in multiple platforms, technologies &amp; APIs.</p>
+                {#    My experience has given me a great understand of running a digital business, including the balance between artistic delivery, answering a brief &amp; project profitability. #}
+                {#    I also have a good eye for design &amp; layout, which is crucial as we move to a more responsive web.#}
+                <p>Adaptable to many situations, I am just as happy chairing brainstorming meetings or liaising with
+                    clients as I am knee deep in code.</p>
+
+            </div>
+
+        </div>
+
+        <div class="skills col-xs-12">
+            <h2>Technical Skills Overview</h2>
+
+        </div>
+            <div class="skills col-xs-6">
+
+            <p><strong>HTML5/CSS</strong>&nbsp;- Comfortable building responsive layouts from scratch or using a
+                framework such as Bootstrap. I have a preference for LESS for CSS preprocessing.
+            </p>
+
+            <p><strong>Javascript </strong>- Experience with a variety of JS frameworks &amp; libraries (jQuery,
+                Knockout, Angular), as well as vanilla JS.
+            </p>
+
+<p><strong>Unity 3D / C#</strong>&nbsp;- I have been fortunate enough to work on a couple of projects using
+                Unity. Most of my C# experience comes through working with Unity, although I have worked on a number of
+                .Net websites.
+            </p>
+
+            <p><strong>PHP</strong>&nbsp;- I have built a number of sites &amp; services using the Codeigniter
+                framework, as well as experience with Wordpress.
+            </p>
+                <p><strong>Node.js</strong>&nbsp;- Another platform I admire for the speed in which projects can be
+                developed, I have mostly used Node to build systems utilizing websockets.
+            </p>
+                </div>
+<div class="skills col-xs-6">
+
+            <p><strong>Python</strong>&nbsp;- My language of choice for both personal &amp; professional work due to the
+                speed in which I can realise my ideas. I have used python to develop a number of tools for colleagues to
+                solve problems &amp; streamline workflows. My personal website was recently redeveloped using the Django
+                framework.
+            </p>
+
+
+
+
+
+            <p><strong>Arduino</strong>&nbsp;- I have a passion for electronics and have used the Arduino for a number
+                of projects both in work and play from a web-enabled christmas tree to a automated thermostat for my
+                office.
+            </p>
+
+            <p><strong>Source Control</strong>&nbsp;- Comfortable using both Git and SVN.</p>
+
+            <p><strong>Software</strong>&nbsp;- My development IDEs of choice come from JetBrains. I am comfortable
+                using the entire Adobe design suite as well as 3DS Max.
+            </p>
+
+            <p><strong>OS - </strong>Windows, Linux &amp; Mac OS. Experience configuring, Apache, Nginx &amp; Windows
+                servers.
+            </p>
+    </div>
+
+
+        <div class="work col-xs-12">
+
+            <h2><a></a>Work Experience</h2>
+
+            <h3><a></a>Crab Creative</h3>
+
+            <p>Senior Developer</p>
+
+            <p>2008 - 2014</p>
+
+            <p>I was lucky enough to play an important role in the development of Crab in the 6 years I was there. The
+                company had a staff of 5 when I joined, meaning that adapting to a number of roles was essential. As
+                well as my development duties, there was a requirement to oversee the entire project lifecycle, as well
+                as liaise with clients. Crab now has over 15 employees and works with a number of high profile brands
+                such as Red or Dead and Drambuie.
+            </p>
+
+            <p>Here is an overview of my role at Crab over the last year:</p>
+            <ul>
+                <li>
+                    Working on both web based and non web based projects using the technologies listed above.
+                </li>
+                <li>Research &amp; Development of new technologies.</li>
+                <li>Technical input in the planning of all projects.</li>
+                <li>Managing projects from inception to delivery.</li>
+                <li>Establishing dialog with clients to help them understand the possibilities of technologies to fit
+                    their needs.
+                </li>
+                <li>Building systems to improve efficiency for both Crab &amp; its clients.</li>
+            </ul>
+            <h3><a name="h.hibxtepxylas"></a>Effective Marketing Systems</h3>
+
+            <p>Front End Developer</p>
+
+            <p>2005 - 2008</p>
+            <ul>
+                <li>Creation of Flash &amp; HTML websites from pre-designed concepts.</li>
+                <li>Communication with clients at all stages of website production.</li>
+                <li>Attending meetings with prospective clients, to scope their requirements and inform them of services
+                    that the company could make available to them.
+                </li>
+            </ul>
+
+
+            <h2><a name="h.l3apw07be59j"></a>Education</h2>
+
+            <p>1992 - 1999 - Sedbergh School, Cumbria. 5 A-Levels (4 As, 1 B)</p>
+
+            <p>1999 - 2002 - Computer Science - Edinburgh University, UK</p>
+        </div>
+    </div>
+
+{% endblock %}
