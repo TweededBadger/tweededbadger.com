@@ -8,3 +8,6 @@ def tools(request):
 
 def cv(request):
     return render(request,'about/cv.html')
+
+def work(request):
+    return render(request,'about/work.html')

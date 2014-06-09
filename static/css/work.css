@@ -549,71 +549,95 @@
 .icon-platter {
   font-family: "FontMfizz";
 }
-body {
-  width: 780px;
-  font-size: 14px;
-  line-height: 17px;
-  border-right: solid 1px #ececec;
-}
-.cv h1 {
-  font-size: 40px;
-  color: #fa874a;
-  margin-bottom: 15px;
-}
-.cv h2,
-.cv h3 {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.cv .logo {
-  padding-top: 8px;
-  width: 138px;
-  padding-right: 0;
-}
-.cv .logo img {
+.work {
   width: 100%;
-  max-width: 135px;
-  left: 10px;
+  height: 100%;
+}
+.work .workitem {
+  width: 100%;
+  height: 100%;
+}
+.work .workitem .details,
+.work .workitem .image {
+  width: 50%;
+  height: 50%;
+  display: inline-block;
+  float: left;
   position: relative;
 }
-.cv .header {
-  margin-top: 20px;
+.work .workitem .details {
+  padding: 30px;
+  color: #ffffff;
+  font-family: 'Arvo', serif;
+  font-size: 18px;
+  line-height: 22px;
 }
-.cv .header > div {
-  padding-right: 0;
+.work .workitem .details.one {
+  background-color: #38c3c6;
 }
-.cv .header h1 {
+.work .workitem .details.two {
+  background-color: #abe255;
+}
+.work .workitem .details.three {
+  background-color: #7855c0;
+}
+.work .workitem .details.four {
+  background-color: #fa874a;
+}
+.work .workitem .details.five {
+  background-color: #ffc322;
+}
+.work .workitem .details.six {
+  background-color: #38c3c6;
+}
+.work .workitem .details h2 {
+  font-size: 28px;
+}
+.work .workitem .details h1,
+.work .workitem .details h2,
+.work .workitem .details h3 {
+  color: white;
   margin-top: 0;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
 }
-.cv .header .name {
-  width: 260px;
+.work .workitem .details .tech {
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  right: 3px;
 }
-.cv .header .name p {
+.work .workitem .details a {
+  color: #ffffff;
+  font-weight: bold;
+}
+.work .workitem .image {
+  overflow: hidden;
+  text-align: center;
+}
+.work .workitem .image img {
+  width: 101%;
+  margin: -100%;
+}
+.work .workitem .image.fill img {
+  height: 100%;
+  width: auto;
+}
+.work .workitem .image.black {
+  background-color: #000000;
+}
+.work .workitem .vertical-center-outer:after {
+  margin-left: 0;
+}
+.work .workitem.willintro h1 {
+  font-size: 36px;
+}
+.work .workitem.willintro h1,
+.work .workitem.willintro h2 {
+  border: none;
   margin: 0;
 }
-.cv .header .cvintro {
-  width: 324px;
-  border-left: 1px solid #fa874a;
-  border-right: 1px solid #fa874a;
-  margin-left: 35px;
-}
-.cv .header .cvintro p:last-child {
-  margin-bottom: 0;
-}
-.cv .skills h2 {
-  color: #7855c0;
-}
-.cv .skills p strong {
-  color: #7855c0;
-}
-.cv .workexp h1,
-.cv .workexp h2,
-.cv .workexp h3 {
-  color: #38c3c6;
-}
-.cv .workexp h3 {
-  margin-bottom: 0;
-}
-.cv .education h2 {
-  color: #abe255;
+.work .workitem.willintro .image img {
+  max-height: 80%;
+  width: auto;
 }
