@@ -1,9 +1,10 @@
 @tool-margin: 1%;
 
 .tools {
-  margin-bottom: 30px;
+//  margin-bottom: 30px;
   padding-top: 0;
   height: auto !important;
+  min-height: 100%;
 
 
   h1 {
@@ -28,21 +29,34 @@
 
   }
   .tool {
-    @tool-margin: 3%;
+    @tool-margin: 2%;
+    @tool-margin-4col: 1%;
     color: white;
     position: relative;
     @media (min-width: @screen-xs) {
       width: (100%-(@tool-margin*4))/2;
       height: 300px;
+    margin-left: @tool-margin;
+    margin-right: @tool-margin;
+    margin-bottom: @tool-margin*2;
     }
     @media (min-width: @screen-sm) {
       width: (100%-(@tool-margin*4))/2;
+    margin-left: @tool-margin;
+    margin-right: @tool-margin;
+    margin-bottom: @tool-margin*2;
     }
     @media (min-width: @screen-md) {
       width: (100%-(@tool-margin*6))/3;
+    margin-left: @tool-margin;
+    margin-right: @tool-margin;
+    margin-bottom: @tool-margin*2;
     }
     @media (min-width: @screen-lg) {
-      width: (100%-(@tool-margin*8))/4;
+      width: (100%-(@tool-margin-4col*8))/4;
+    margin-left: @tool-margin-4col;
+    margin-right: @tool-margin-4col;
+    margin-bottom: @tool-margin-4col*2;
     }
 
 
@@ -63,6 +77,11 @@
     }
     p {
       font-weight: 400;
+      &.quote {
+        text-align: center;
+        font-style: italic;
+        font-size: 80%;
+      }
     }
     i {
       font-size: 150px;

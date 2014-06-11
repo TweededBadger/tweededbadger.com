@@ -5,8 +5,8 @@
   font-weight: normal;
   font-style: normal;
 }
-[class^="moonicon-"],
-[class*=" moonicon-"] {
+[class^="icon-"],
+[class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
   font-style: normal;
@@ -18,20 +18,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.moonicon-uniF760:before {
-  content: "\e601";
-}
-.moonicon-reddit:before {
-  content: "\e602";
-}
-.moonicon-twitter:before {
+.icon-mail:before {
   content: "\e600";
 }
-.moonicon-brain:before {
+.icon-twitter:before {
+  content: "\e602";
+}
+.icon-linkedin:before {
   content: "\e603";
 }
-.moonicon-blog:before {
-  content: "\e604";
+.icon-github:before {
+  content: "\e601";
 }
 @font-face {
   font-family: 'toolicons';

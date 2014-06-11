@@ -7,7 +7,7 @@
     <div class="about clearfix">
         <div class="base vertical-center-outer">
             <div class="vertical-center">
-                <img src="/static/img/BadgerBaset.png">
+                <img src="/static/img/badger/badger.svg">
             </div>
         </div>
         <div class="sections">
@@ -16,15 +16,15 @@
                     <div>
                         <h1>Greetings!</h1>
 
-                        <p>I am London based technologist Will Jutsum. With over 10 years experience, I understand both
+                        <p>I am London based Creative Technologist Will Jutsum.</p><p>With over 10 years experience, I understand both
                             the artistic and business aspects of digital development.</p>
 
-                        <p>Scroll down to find out more..</p>
+                        <p>Scroll down or click the arrow to find out more..</p>
                     </div>
                 </div>
                 <div class="fixed vertical-center-outer">
                     <div class="vertical-center">
-                        <img src="/static/img/BadgerHat.png">
+                        <img src="/static/img/badger/badger_hat.svg">
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="fixed vertical-center-outer">
                     <div class="vertical-center">
-                        <img src="/static/img/BadgerKBMous.png">
+                        <img src="/static/img/badger/badger_kbm.svg">
                     </div>
                 </div>
             </div>
@@ -47,13 +47,13 @@
                 <div class="vertical-center maincopy">
                     <div><p>
                         From building Kinect based games for the Olympic torch relay to turning people upside down at
-                        the Edinburgh Fringe festival, and even tracking a giant fried egg across the country! I thrive
-                        on finding interesting and unexpected digital solutions to any project brief.
+                        the Edinburgh Fringe festival, and even tracking a giant fried egg across the country.
+                        <p>I thrive on finding interesting and unexpected digital solutions to any project brief.</p>
                     </p></div>
                 </div>
                 <div class="fixed vertical-center-outer">
                     <div class="vertical-center">
-                        <img src="/static/img/BadgerTech.png">
+                        <img src="/static/img/badger/badger_pj.svg">
                     </div>
                 </div>
             </div>
@@ -103,10 +103,10 @@
 
                         <p>I’ve had the pleasure (?) of working with a number of server configurations over the years
                             from LAMP to .Net on IIS. This is site is running on an AWS micro instance with an
-                            Ubuntu/Nginx/Gunicorn/Django/Mysql stack.</p></div><div class="tool"><h2>Software</h2>
+                            Ubuntu/Nginx/Gunicorn/Django stack.</p></div><div class="tool"><h2>Experience</h2>
                         <i class="icon-python"></i>
-
-                        <p>I <3 Jetbrains</p></div>
+                        <p class="quote">“If you're not failing every now and again, it's a sign you're not doing anything very innovative.”</p>
+                        <p>You don't work for 10 years without failing. A lot. What's important is learning from those failures quickly and spotting the issues before they arise in the future.</p></div>
                 </div>
             </div>
 
@@ -132,13 +132,12 @@
                             for a walk.
                         </p>
 
-                        <p>Interested in working with me? You can find a more in depth overview of my skillset <a
-                                href="#">here</a> and get in touch with me <a href="#">here</a>.</p>
+                        <p>Interested in working with me or want to hear more about the work i've done? Then drop me a line at <a href="mailto:will@tweededbadger.com">will@tweededbadger.com</a>.</p>
                     </div>
                 </div>
                 <div class="fixed vertical-center-outer">
                     <div class="vertical-center">
-                        <img src="/static/img/BadgerContact.png">
+                        <img src="/static/img/badger/badger_home.svg">
                     </div>
                 </div>
             </div>
@@ -146,8 +145,15 @@
 
         </div>
 
-
+    <div class="controls"><a class="downcontrol" href="#"><i class="glyphicon glyphicon-circle-arrow-down"></i></a></div>
+    <div class="links">
+        <a href="mailto:will@tweededbadger.com" target="_blank"><i class="icon-mail"></i></a>
+        <a href="https://github.com/TweededBadger" target="_blank"><i class="icon-github"></i></a>
+        <a href="https://www.linkedin.com/pub/will-jutsum/90/5b1/87b" target="_blank"><i class="icon-linkedin"></i></a>
+        <a href="https://twitter.com/tweededbadger" target="_blank"><i class="icon-twitter"></i></a>
     </div>
+    </div>
+
 
 
 
@@ -156,7 +162,7 @@
 
 
 {% block scripts %}
-
+    <script src="{% static 'js/animatescroll.min.js' %}"></script>
     <script>
         var about = (function () {
             var $currentItem;
@@ -179,6 +185,28 @@
                 $(window).scroll(function () {
                     checkPos();
                 });
+
+                $(".controls a").click(function(e) {
+                    gotoNextSection();
+                    return false;
+                })
+            }
+
+            gotoNextSection = function() {
+
+                if ($currentItem.length == 0) {
+                    var next = $(".tools").next();
+                } else {
+                    var next = $currentItem.parent().next();
+                }
+                console.log(next);
+                if (next.length == 0) {
+                     var next = $(".section1");
+                }
+                next.animatescroll({scrollSpeed:1000,easing:'easeInOutQuad'});
+
+
+
             }
             selectCurrent = function ($elem) {
                 if ($currentItem != $elem) {
@@ -204,6 +232,15 @@
                         $(".base").removeClass('badgerhide');
 
                     }
+
+                    if ($elem.parent().next().length != 0 || $elem.length == 0) {
+
+                        $(".controls").removeClass('rotate');
+
+                    } else {
+                        $(".controls").addClass('rotate');
+                    }
+
                 }
             }
             checkPos = function () {
