@@ -554,6 +554,9 @@
   width: 100%;
   height: 100%;
 }
+.work .workitem.bbc .details {
+  font-size: 15px ;
+}
 .work .workitem .details,
 .work .workitem .image {
   width: 50%;
@@ -563,11 +566,11 @@
   position: relative;
 }
 .work .workitem .details {
-  padding: 30px;
+  padding: 20px;
   color: #ffffff;
   font-family: 'Arvo', serif;
-  font-size: 18px;
-  line-height: 22px;
+  font-size: 17px;
+  line-height: 21px;
 }
 .work .workitem .details.one {
   background-color: #38c3c6;
@@ -588,21 +591,19 @@
   background-color: #38c3c6;
 }
 .work .workitem .details h2 {
-  font-size: 28px;
+  font-size: 24px;
 }
 .work .workitem .details h1,
 .work .workitem .details h2,
 .work .workitem .details h3 {
   color: white;
   margin-top: 0;
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 5px;
+  margin-bottom: 0;
 }
 .work .workitem .details .tech {
-  font-size: 16px;
-  position: absolute;
-  top: 0;
-  right: 3px;
+  font-size: 14px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 5px;
 }
 .work .workitem .details a {
   color: #ffffff;

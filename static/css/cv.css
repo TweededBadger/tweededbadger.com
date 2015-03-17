@@ -552,7 +552,8 @@ body {
   line-height: 17px;
   border-right: solid 1px #ececec;
 }
-.cv p a {
+.cv p a,
+.cv li a {
   text-decoration: underline;
 }
 .cv h1 {
